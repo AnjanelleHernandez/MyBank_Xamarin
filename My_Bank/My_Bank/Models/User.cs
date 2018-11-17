@@ -12,9 +12,7 @@ namespace My_Bank.Models
 
         public string lastName { get; set; }
 
-        public byte[] passwordHash { get; set; }
-
-        public byte[] passwordSalt { get; set; }
+        public string password { get; set; }
 
         public string emailAddress { get; set; }
         
