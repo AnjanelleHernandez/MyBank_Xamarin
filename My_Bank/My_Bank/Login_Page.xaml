@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="My_Bank.Login_Page">
+             x:Class="My_Bank.Login_Page"
+             xmlns:viewModels="clr-namespace:My_Bank.ViewModels">
+    
+    <ContentPage.BindingContext>
+          <viewModels:AuthViewModel/>
+     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout Padding="30,30,30,30">
             <Label x:Name="apiLabel"/>
@@ -9,9 +15,9 @@
                 VerticalOptions="Start" 
                 HorizontalOptions="StartAndExpand" />
             <Label x:Name="emailLabel" Text=" Email:"/>
-            <Entry Placeholder=" Enter email address..."/>
+            <Entry Text="{Binding _loginUser.emailAddress}" Placeholder=" Enter email address..."/>
             <Label Text=" Password:"/>
-            <Entry Placeholder=" Enter password..." IsPassword="True"/>
+            <Entry Text="{Binding _loginUser.password}" Placeholder=" Enter password..." IsPassword="True"/>
             <Button Text="Login" Clicked="HomeScreenOnClicked"/>
             <Button Text=" Create Account" Clicked="NavigateButton_CreateAccountOnClicked"/>
         </StackLayout>

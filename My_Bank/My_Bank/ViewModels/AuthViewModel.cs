@@ -5,6 +5,8 @@ using My_Bank.Services;
 using My_Bank.Models;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace My_Bank.ViewModels
 {
@@ -17,6 +19,10 @@ namespace My_Bank.ViewModels
         public ICommand RegisterCommand => new Command(async() => 
         {
             await _authServices.Register(_user);
+            _loginUser.emailAddress = _user.emailAddress;
+            _loginUser.password = _user.password;
+            await _authServices.Login(_loginUser);
+           // Application.Current.Properties["token"] = "abd";
         }); 
     }
 }

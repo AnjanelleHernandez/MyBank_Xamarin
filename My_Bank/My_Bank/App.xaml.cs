@@ -18,13 +18,13 @@ namespace My_Bank
 		{
 			InitializeComponent();
 
-			//MainPage = new NavigationPage(new MainPage());
+			MainPage = new NavigationPage(new My_Bank.Login_Page());
 		}
 
 		protected override void OnStart ()
 		{
             // Handle when your app starts
-            MainPage = new NavigationPage(new Login_Page());
+            //MainPage = new NavigationPage(new Login_Page());
         }
 
 		protected override void OnSleep ()

@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="My_Bank.Create_Account"
-             xmlns:viewModels="clr-namespace:My_Bank.ViewModels"
+             xmlns:viewModels="clr-namespace:My_Bank.ViewModels">
+    
     <ContentPage.BindingContext>
         <viewModels:AuthViewModel/>
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout Padding="30,30,30,30">
             <Label Text="First Name: "/>
@@ -16,7 +18,7 @@
             <Entry Text="{Binding _user.emailAddress}" Placeholder="Enter your email address..."/>
             <Label Text="Password:"/>
             <Entry Text="{Binding _user.password}" Placeholder="Enter a password..."/>
-            <Button Text="Create Account" Command="{Binding RegisterCommand}"/>
+            <Button Text="Create Account" Command="{Binding RegisterCommand}" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
